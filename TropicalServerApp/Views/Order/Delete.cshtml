@@ -1,0 +1,64 @@
+﻿@model TropicalServerApp.Models.OrderModels.tblOrder
+
+@{
+    ViewBag.Title = "View";
+}
+
+
+<h3>Are you sure you want to delete this record?</h3><br>
+<h4>The Order Information</h4>
+<hr />
+@using (Html.BeginForm("DeleteConfirmed", "Order", FormMethod.Post, new { }))
+//action name, controller name, form method, html attribute
+{
+    @Html.AntiForgeryToken()
+    <div>
+
+        @Html.LabelFor(model => model.OrderID)
+        <br>
+        @Html.TextBoxFor(model => model.OrderID, new { @class = "form-control", @readonly = "readonly" })
+        <br>
+
+        @Html.LabelFor(model => model.OrderTrackingNumber)
+        <br>
+        @Html.TextBoxFor(model => model.OrderTrackingNumber, new { @class = "form-control", @readonly = "readonly" })
+        <br>
+
+        @Html.LabelFor(model => model.OrderDate)
+        <br>
+        @Html.TextBoxFor(model => model.OrderDate, new { @class = "form-control", @readonly = "readonly" })
+        <br>
+
+        @Html.LabelFor(model => model.OrderRouteNumber)
+        <br>
+        @Html.TextBoxFor(model => model.OrderRouteNumber, new { @class = "form-control" , @readonly = "readonly" })
+        <br>
+
+        @Html.LabelFor(model => model.OrderCustomerNumber)
+        <br>
+        @Html.TextBoxFor(model => model.OrderCustomerNumber, new { @class = "form-control", @readonly = "readonly" })
+        <br>
+
+        @Html.LabelFor(model => model.OrderCaseNumbers)
+        <br>
+        @Html.TextBoxFor(model => model.OrderCaseNumbers, new { @class = "form-control", @readonly = "readonly" })
+        <br>
+
+        @Html.LabelFor(model => model.OrderItemNumber)
+        <br>
+        @Html.TextBoxFor(model => model.OrderItemNumber, new { @class = "form-control", @readonly = "readonly" })
+        <br>
+
+        @Html.LabelFor(model => model.OrderItemQty)
+        <br>
+        @Html.TextBoxFor(model => model.OrderItemQty, new { @class = "form-control", @readonly = "readonly" })
+        <br>
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("Back to List", "Index")|
+            <input type="submit" value="Delete" class="btn btn-default" />
+
+        </div>
+    </div>
+}
+

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<TropicalServerApp.Models.OrderDetail>
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<h2>Edit Record</h2>
+@using (Html.BeginForm("SaveEdit", "Order", FormMethod.Post, new { }))
+//action name, controller name, form method, html attribute
+{
+    @Html.LabelFor(model => model.FirstOrDefault().orderDetails.OrderID)
+    <br>
+    @Html.TextBoxFor(model => model.FirstOrDefault().orderDetails.OrderID, new { @class = "form-control", @readonly = "readonly" })
+    <br>
+
+    @Html.LabelFor(model => model.FirstOrDefault().orderDetails.OrderTrackingNumber)
+    <br>
+    @Html.TextBoxFor(model => model.FirstOrDefault().orderDetails.OrderTrackingNumber, new { @class = "form-control", @readonly = "readonly" })
+    <br>
+
+    @Html.LabelFor(model => model.FirstOrDefault().orderDetails.OrderDate)
+    <br>
+    @Html.TextBoxFor(model => model.FirstOrDefault().orderDetails.OrderDate, new { @class = "form-control", @readonly = "readonly" })
+    <br>
+
+    @Html.LabelFor(model => model.FirstOrDefault().orderDetails.OrderRouteNumber)
+    <br>
+    @Html.TextBoxFor(model => model.FirstOrDefault().orderDetails.OrderRouteNumber, new { @class = "form-control"})
+    <br>
+
+    @Html.LabelFor(model => model.FirstOrDefault().orderDetails.OrderCustomerNumber)
+    <br>
+    @Html.TextBoxFor(model => model.FirstOrDefault().orderDetails.OrderCustomerNumber, new { @class = "form-control", @readonly = "readonly" })
+    <br>
+
+    @Html.LabelFor(model => model.FirstOrDefault().orderDetails.OrderCaseNumbers)
+    <br>
+    @Html.TextBoxFor(model => model.FirstOrDefault().orderDetails.OrderCaseNumbers, new { @class = "form-control" })
+    <br>
+
+    @Html.LabelFor(model => model.FirstOrDefault().orderDetails.OrderItemNumber)
+    <br>
+    @Html.TextBoxFor(model => model.FirstOrDefault().orderDetails.OrderItemNumber, new { @class = "form-control" })
+    <br>
+
+    @Html.LabelFor(model => model.FirstOrDefault().orderDetails.OrderItemQty)
+    <br>
+    @Html.TextBoxFor(model => model.FirstOrDefault().orderDetails.OrderItemQty, new { @class = "form-control" })
+    <br>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+
+    @*foreach (var item in Model)
+        {
+
+
+            <label for="@item.orderDetails.OrderItemNumber">
+                Order Item Numbers
+            </label>
+            <input type="text" class="form-control" name="@item.orderDetails.OrderItemNumber" value="@item.orderDetails.OrderItemNumber">
+            <br>
+        }*@
+    @*
+
+        <td>@item.orderDetails.OrderRouteNumber</td>
+         <td>@item.orderDetails.OrderCustomerNumber</td>
+         <td>@item.orderDetails.OrderCaseNumbers</td>
+         <td>@item.orderDetails.OrderItemNumber</td>
+         <td>@item.orderDetails.ItemTotalPrice</td>
+    *@
+
+
+
+}
+
+
+
+
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

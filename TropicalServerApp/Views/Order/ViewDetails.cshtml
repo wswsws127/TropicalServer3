@@ -1,0 +1,42 @@
+﻿@model IEnumerable<TropicalServerApp.Models.OrderDetail>
+@{
+    ViewBag.Title = "ViewDetails";
+}
+
+<h2>ViewDetails</h2>
+
+<table class="table">
+    @*TODO: search bar*@
+    @*TODO: add css to the table*@
+    <tr>
+        <td>Order ID</td>
+        <td>Tracking #</td>
+        <td>Order Date</td>
+        <td>Route #</td>
+        <td>Customer #</td>
+        <td>Case #</td>
+        <td>Item #</td>
+        <td>Total Price</td>
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.orderDetails.OrderID</td>
+    <td>@item.orderDetails.OrderTrackingNumber</td>
+    <td>@item.orderDetails.OrderDate</td>
+    <td>@item.orderDetails.OrderRouteNumber</td>
+    <td>@item.orderDetails.OrderCustomerNumber</td>
+    <td>@item.orderDetails.OrderCaseNumbers</td>
+    <td>@item.orderDetails.OrderItemNumber</td>
+    <td>@item.orderDetails.ItemTotalPrice</td>
+
+
+</tr>
+    }
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

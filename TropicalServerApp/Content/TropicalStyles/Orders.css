@@ -1,0 +1,99 @@
+﻿/* Orders
+----------------------------------------------------------*/
+#searchBar {
+    background-color: #4B6C9E;
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+.searchLabel {
+    display: inline-block;
+    color: white;
+    margin-left: 2px;
+}
+
+.searchTextBox {
+    height: auto;
+    display: inline-block;
+    width: 10%;
+    height: 20px;
+    margin-right: 5%;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    margin-right: 2px;
+}
+
+.searchDropDown {
+    height: auto;
+    display: inline-block;
+    width: 10%;
+    margin-right: 2px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+}
+
+#searchSubmit {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.CriteriaBar {
+    background-color: #2C4E81;
+    padding: 9px;
+    margin-top: 5px;
+    height: 20px;
+}
+#CriteriaBar .Criteria
+{
+    text-align:center;
+    width:240px;
+    margin:0;
+    float:left;
+}
+#CriteriaBar .Criteria .label
+{
+    color:#FFFFFF;
+}
+#CriteriaBar .Criteria .Input
+{
+    width:100px;
+}
+#grid 
+{
+    width:100%;
+    text-align:center;
+    height:550px;
+    overflow:auto;
+}
+.gvOrders 
+{
+    /*margin:3px auto;*/
+    width:99%;
+}
+    .gvOrders th {
+        color: #FFFFFF;
+        background-color: #3B8FA7;
+        border: 2px solid #FFFFFF;
+        border-bottom: 5px solid #FFFFFF;
+        padding-left: 5px;
+        padding-top: 3px;
+    }
+.gvOrders td
+{
+    border:2px solid #FFFFFF;
+    padding-left:10px;
+}
+
+    .gvOrders tr:nth-child(even) {
+        background-color: #CED9DF;
+    }
+.gvOrders .Row
+{
+    background-color:#FFFFFF;
+}
+.gvOrders .AltRow
+{
+    background-color:#CED9DF;
+}

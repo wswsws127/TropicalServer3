@@ -1,0 +1,114 @@
+﻿@model TropicalServerApp.Models.tblTropicalUser
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - TropicalServer Login</title>
+    @Styles.Render("~/Content/css")
+
+    <link href="~/Content/TropicalStyles/Login.css" rel="stylesheet" />
+</head>
+<body id="bodyLogin">
+    <div id="container">
+        <div id="header" class="imageDisplay">
+            <img id="headerImg" height="100" src="@Url.Content("~/Images/Header.jpg")" />
+
+        </div>
+
+        <div id="BodyDetail">
+
+            <p id="Loginlbl">MOBILE CUSTOMER ORDER TRACKING</p>
+            <div>
+                @using (Html.BeginForm("Authorize", "Login", FormMethod.Post, new { @id = "loginBox" }))
+                //action name, controller name, form method, html attribute
+                {
+                    <div>
+                        <table>
+                            @*UserID label and input:*@
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(model => model.LoginID, new { @id = "useridlbl" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.LoginID, new { @id = "useridtextbox",@Value = ViewBag.LoginID })
+
+                                </td>
+                            </tr>
+                            @*UserID error message*@
+                            <tr>
+                                <td>
+                                    @Html.ValidationMessageFor(model => model.LoginID, null, new { @class = "errorlbl" })
+                                </td>
+                            </tr>
+                            @*Password label and input*@
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(model => model.Password, new { @id = "passwordlbl" })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => model.Password, null, new { @id = "passwordtextbox" })
+                                </td>
+                            </tr>
+                            @*Password error message*@
+                            <tr>
+                                <td>
+                                    @Html.ValidationMessageFor(model => model.Password, null, new { @class = "errorlbl" })
+                                </td>
+                            </tr>
+                            @*login error message*@
+                            <tr>
+                                <td colspan="2">
+                                   <label class="errorlbl">
+                                       @Html.DisplayFor(model=>model.LoginErrorMessage)
+                                   </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+              
+
+                    <div id="loginButton">
+                        @*remember ID checkbox*@
+                        @*<label id="rememberID">Remember my ID</label>*@
+                        @Html.LabelFor(model=>model.RememberMe,null,new { @id= "rememberID" })
+                        @Html.CheckBoxFor(model=>model.RememberMe)
+
+
+                        <input type="submit" name="name" value="Log-In" id="LoginBtn_1">
+                    </div>
+                }
+            </div>
+            <div id="forgot">
+                <div id="forgotUsername">
+                    @Html.ActionLink("Forgot Username", "ForgotLoginID", "Login")
+                </div>
+                <div id="forgotPassword">
+                    @Html.ActionLink("Forgot Password","ForgotPassword","Login")
+                </div>
+            </div>
+            @*Login Box  Here *@
+        </div>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+
+
+    </div>
+
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
